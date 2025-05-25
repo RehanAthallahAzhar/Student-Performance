@@ -9,7 +9,7 @@ Dengan menganalisis prediktor-prediktor risiko dropout menggunakan dataset [stud
 
 1. Mendeteksi dini -> mengidentifikasi siswa berisiko tinggi sebelum keputusan berhenti diambil.
 
-2. Intervensi terfokus -> memberikan bimbingan akademik maupun psikologis sesuai kebutuhan individu.
+2. Intervensi terfokus -> memberikan bimbingan akademik maupun psikologis sesuai kebutuhan individu sehingga mencegah mahasiswa dropout
 
 3. Mengurangi dropout -> menurunkan angka putus studi, meningkatkan pendapatan dan reputasi, serta memenuhi target kualitas pendidikan.
 
@@ -25,25 +25,37 @@ Dengan demikian, proyek ini tidak hanya memperkuat daya saing dan keberlanjutan 
 
 ### Persiapan
 
-Setup environment: [student dataset](https://github.com/dicodingacademy/dicoding_dataset/blob/main/students_performance/README.md)
-```
-    conda activate student-performance
-    pip install requirement.txt
-    jupyter notebook .
-```
+Setup environment: 
+
+1. Clone repository
+2. Download dataset pada link berikut [student dataset](https://github.com/dicodingacademy/dicoding_dataset/blob/main/students_performance/README.md)
+3. Jalankan perintah dibawah 
+    ```
+        conda activate student-performance
+        pip install -r requirements.txt
+        jupyter notebook .
+    ```
+
+atau bisa jalankan pada environment google collab
 
 ## Business Dashboard
+Dashboard ini berisi parameter parameter penting yang dapat digunakan untuk memantau sebaran data mahasiswa yang dropout dan juga memonitor mahasiswa agar institusi dapat mendeteksi dan mengambil tindakan dini untuk mencegah mahasiswa dropout. 
+
+Berikut link Dashboard yang bisa anda buka
 [Student Performance Dashboard](https://public.tableau.com/app/profile/rehan.azhar/viz/studentperformancedashboard_17467815293880/Dashboard1)
 
 ## Menjalankan Sistem Machine Learning
-Model akhir dapat digunakan untuk membantu sekolah mengidentifikasi siswa yang berisiko tidak lulus lebih awal. xgboost cenderung memberikan performa terbaik dalam memprediksi kelulusan siswa.
+Model Random Forest ini dapat digunakan untuk membantu sekolah mengidentifikasi lebih awal mana siswa yang berisiko tidak lulus . Berikut cara menjalankan model yg telah dibuat.
+1. Buka terminal di folder student performance
+2. Jalankan perintah dibawah
+    ```
+    streamlit run app.py
+    ```
+3. Jika berhasil dijalankan, isi data sesuai format yg ditetapkan dan klik tombol predict
 
-```
-    docker-compose up --build
-```
+Atau bisa mencoba model melalui link berikut [Student Performance Model](https://student-performance-oz2dqvdju8lxbstt8swapi.streamlit.app/)
 
 ## Conclusion
-# Kesimpulan
 1. Secara keseluruhan, tingkat dropout mahasiswa, baik internasional maupun domestik, cukup tinggi, dan status kelulusan sangat dipengaruhi oleh berbagai faktor.
 2. Faktor-faktor yg menjadi pemicu mahasiswa dropout dapat dilihat melalui hasil analisis PCA yang meliputi
     - Perbandingan mahasiswa yg tidak menerima beasiswa cenderung memiliki tingkat dropout lebih tinggi daripada yg tidak meneirma beasiswa
